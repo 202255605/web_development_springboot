@@ -21,6 +21,7 @@ test {
     useJUnitPlatform()
 }
 
+
 // plugins -> org.springframework.boot -> 스프링부트 플러그인
 // spring.dependency-management -> 스프링의 의존성을 자동으로 관리
 
