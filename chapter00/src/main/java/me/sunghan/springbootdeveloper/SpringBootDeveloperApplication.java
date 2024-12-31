@@ -5,17 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /*
 모든 프로젝트는 main에 해당하는 클래스가 존재합니다 -> 실행용 클래스
-이제 이 class를 main클래스로 사용할 예정입니다. 자바를 위한 클래스지 스프링 부트를 위한 클래스는 아니라는 것
+이제 이 class를 main클래스로 사용할 예정입니다.
  */
 
 @SpringBootApplication
 
 public class SpringBootDeveloperApplication {
-
     public static void main(String[] args){
         SpringApplication.run(SpringBootDeveloperApplication.class , args);
-
-    }
+    }  // 이 실행파일이 성공적으로 실행 되었다면 로컬호스트에서 시작되는 서버가 안정적으로 잘 실행 완료됨.
 
 }
 

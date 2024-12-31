@@ -14,3 +14,7 @@ public class JUNIT {
 
 
 }
+
+//perform() 메서드는 요청을
+// andexcept() 메서드는 응답을 검ㅈㅇ , TestController 에서 만든 API는 응답으로 OK(200) 을 반환하므로 이에 해당하는 메서드인 isOK()
+//jsonpath("$[0])를 사용해

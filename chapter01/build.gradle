@@ -6,8 +6,7 @@ plugins {
 
 group = 'me.sunghan'
 version = '1.0'
-sourceCompatibility = '17';
-
+sourceCompatibility = '17'; // 자바 소스를 컴파일 할 때 사용할 자바의 버전을 고정 -> 17
 repositories {
     mavenCentral()
 }
@@ -20,3 +19,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+
+
+
