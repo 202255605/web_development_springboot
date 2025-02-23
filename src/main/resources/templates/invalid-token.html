@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Token Request Error</title>
+  <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+    .container {
+        text-align: center;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .loading-dots {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: #666;
+    }
+    .loading-dots:after {
+        content: '';
+        animation: dots 1.5s steps(5, end) infinite;
+    }
+    @keyframes dots {
+        0%, 20% { content: '.'; }
+        40% { content: '..'; }
+        60% { content: '...'; }
+        80%, 100% { content: ''; }
+    }
+    .message {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+    }
+    .timer {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    .countdown {
+        font-weight: bold;
+        color: #007bff;
+    }
+  </style>
+  <!-- .container 내부의 box-shadow: 그림자 효과로 입체감 부여 (위 ,아래 , 양옆 이 크기인 듯.)-->
+  <!-- :after: 가상 요소를 만들어서 요소 뒤에 내용을 추가
+        content: '': 빈 내용으로 시작
+        animation: 애니메이션 속성 정의
+
+        dots: 애니메이션 이름 -> @keyframe dots 라는 후 속성을 붙힌다.
+        1.5s: 애니메이션 한 사이클이 1.5초
+        steps(5, end): 5단계로 나누어 애니메이션 실행
+        infinite: 무한 반복-->
+  <script>
+    window.onload = function() {
+        var timeLeft = 5;
+        var timer = document.getElementById('countdown');
+
+        var countdownInterval = setInterval(function() {
+            timeLeft--;
+            timer.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = '/login';
+            }
+        }, 1000);
+    }
+  </script>
+  <!-- window.onload = 페이지가 완전히 로드되었을 때 실행되는 이벤트 핸들러
+모든 HTML 요소가 로드된 후에 타이머가 시작되도록 보장
+
+       var timer = document.getElementById('countdown');
+-> 여기서는 Id가 countdown 인 html 상의 요소 -> <span id="countdown">5</span> 이 요소를 가르킴
+: script구문에서  timer.textContent 라고 하는 부분은 <span> 태그 내부의 실제 텍스트 값인 5의 부분을 말 하는 것이고 이 값은 계속 바뀐다는 의미
+-->
+</head>
+<body>
+<div class="container">
+  <div class="message">유효하지 않은 토큰입니다 : 다시 로그인 하여 유효한 token을 요청하세요</div>
+  <div class="timer">
+    <span id="countdown">5</span>초 후 로그인 페이지로 이동합니다
+  </div>
+  <div class="loading-dots"></div>
+</div>
+</body>
+</html>
